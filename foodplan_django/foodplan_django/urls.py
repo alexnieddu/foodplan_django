@@ -19,7 +19,7 @@ from django.contrib import admin
 from login import views as login_views
 
 urlpatterns = [
-    url(r'^', include('app.urls')),
+    url(r'^', include('app.urls'), name='home'),
     url(r'^login/', login_views.login, name='login'),
     url(r'^register/', login_views.register, name='register'),
     url(r'^admin/', admin.site.urls),
