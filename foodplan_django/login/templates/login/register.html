@@ -110,7 +110,8 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <div class="mb-4">
                 <h1 class="fs-1 pacifico theme-color">{{ name }}</h1>
             </div>

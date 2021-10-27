@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib import messages
+
 from .forms import UserRegisterForm
 
 
@@ -12,11 +10,12 @@ def login(request):
     }
     return render(request, 'login/login.html', context)
 
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            # form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, 'Account created!')
             return redirect('home')
