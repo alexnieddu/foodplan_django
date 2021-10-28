@@ -3,10 +3,12 @@ from django.contrib import messages
 
 from .forms import UserRegisterForm
 
+_app_name = 'Foodplan'
+
 
 def login(request):
     context = {
-        'name': 'Foodplan'
+        'name': _app_name
     }
     return render(request, 'login/login.html', context)
 
@@ -23,7 +25,7 @@ def register(request):
         form = UserRegisterForm()
 
     context = {
-        'name': 'Foodplan',
+        'name': _app_name,
         'form': form
     }
     return render(request, 'login/register.html', context)
