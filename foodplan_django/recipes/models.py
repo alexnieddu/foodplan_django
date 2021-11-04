@@ -5,14 +5,14 @@ class Category(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self) -> str:
-        return self.name
+        return '%s' % self.name
 
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self) -> str:
-        return self.name
+        return '%s' % self.name
 
 
 class Recipe(models.Model):
@@ -24,4 +24,4 @@ class Recipe(models.Model):
     categories = models.ManyToManyField(Category)
 
     def __str__(self) -> str:
-        return self.name
+        return '%s' % self.name
